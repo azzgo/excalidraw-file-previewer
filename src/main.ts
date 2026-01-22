@@ -31,7 +31,8 @@ const isValidExcalidrawFile = (json: any): json is ExcalidrawFile => {
 let json: unknown;
 try {
   if (document.body.innerText.trim().startsWith("{")) {
-    json = JSON.parse(document.body.innerText);
+    let last = document.body.innerText.lastIndexOf("}");
+    json = JSON.parse(document.body.innerText.slice(0, last + 1));
   }
 } catch (e) {
   console.error("[Excalidraw] parse JSON failed:", e);
