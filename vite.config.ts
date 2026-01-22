@@ -17,6 +17,10 @@ export default defineConfig({
         require: [
           "https://cdn.jsdelivr.net/gh/azzgo/excalidraw-file-previewer@0.0.2/dist/excalidraw-lib.umd.js",
         ],
+        resource: {
+          REMOTE_STYLE:
+            "https://cdn.jsdelivr.net/npm/@excalidraw/excalidraw@0.18.0/dist/prod/index.min.css",
+        },
       },
     }),
   ],

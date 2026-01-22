@@ -1,11 +1,14 @@
+import { GM_addStyle, GM_getResourceText } from "$";
 import "./index.css";
-import '@excalidraw/excalidraw/index.css';
 
 import {
   EXCALIDRAW_TYPE,
   ExcalidrawFile,
   SUPPORT_EXCALIDRAW_VERSION,
 } from "./type";
+
+const myCss = GM_getResourceText("REMOTE_STYLE");
+GM_addStyle(myCss);
 
 declare global {
   interface Window {
@@ -37,7 +40,9 @@ if (isValidExcalidrawFile(json)) {
   if (window.ExcalidrawLib?.renderExcalidrawEditor) {
     window.ExcalidrawLib.renderExcalidrawEditor(json);
   } else {
-    console.error("[Excalidraw] Library not loaded. Please include excalidraw-lib.umd.js");
+    console.error(
+      "[Excalidraw] Library not loaded. Please include excalidraw-lib.umd.js",
+    );
   }
 } else {
   console.warn("[Excalidraw] Illegal Excalidraw file structure");
