@@ -1,9 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Excalidraw, restoreAppState } from "@excalidraw/excalidraw";
-import "@excalidraw/excalidraw/index.css";
 
-export default function renderExcalidrawEditor(json: ExcalidrawFile) {
+interface ExcalidrawFile {
+  elements: any[];
+  appState: any;
+  files: any;
+}
+
+function renderExcalidrawEditor(json: ExcalidrawFile) {
   ReactDOM.createRoot(
     (() => {
       const app = document.createElement("div");
@@ -32,3 +37,12 @@ export default function renderExcalidrawEditor(json: ExcalidrawFile) {
     </React.StrictMode>,
   );
 }
+
+// Export to window for UMD
+if (typeof window !== "undefined") {
+  (window as any).ExcalidrawLib = {
+    renderExcalidrawEditor,
+  };
+}
+
+export { renderExcalidrawEditor };
