@@ -14,13 +14,15 @@ export default defineConfig({
         "run-at": "document-idle",
         match: ["*://*/*.excalidraw", "file:///*.excalidraw"],
         namespace: "npm/vite-plugin-monkey",
+        description: "A userscript that renders `.excalidraw` files directly in the browser.",
         require: [
-          "https://cdn.jsdelivr.net/gh/azzgo/excalidraw-file-previewer@0.0.2/dist/excalidraw-lib.umd.js",
+          "https://cdn.jsdelivr.net/gh/azzgo/excalidraw-file-previewer@0.0.2/dist/excalidraw-lib.umd.js#sha256-saaAgmgXKUqt6J9Lj/M8Zv1QCBLNk2LaOImJ0KZ+R8Q=",
         ],
         resource: {
           REMOTE_STYLE:
             "https://cdn.jsdelivr.net/npm/@excalidraw/excalidraw@0.18.0/dist/prod/index.min.css",
         },
+        license: "MIT",
       },
     }),
   ],
