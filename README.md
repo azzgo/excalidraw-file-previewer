@@ -16,13 +16,24 @@ A userscript that renders `.excalidraw` files directly in the browser.
 
 ## Installation
 
-1. Install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)
-2. Build the userscript:
+First install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)
+
+### Get From Greasy Fork
+
+Get script from [Greasy Fork | excalidraw file previewer](https://greasyfork.org/zh-CN/scripts/563560-excalidraw-file-previewer)
+
+### Get From Release
+
+Get script `excalidraw-file-previewer.user.js` from [Release | excalidraw file previewer](https://github.com/azzgo/excalidraw-file-previewer/releases/latest/)
+
+### Build From Source
+
+1. Build the userscript:
    ```bash
    pnpm install
    pnpm run build
    ```
-3. Open `dist/excalidraw-file-previewer.user.js` and install it via your userscript manager
+2. Open `dist/excalidraw-file-previewer.user.js` and install it via your userscript manager
 
 ## Usage
 
