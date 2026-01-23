@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         excalidraw-file-previewer
+// @name         excalidraw file previewer
 // @namespace    npm/vite-plugin-monkey
 // @version      0.0.4
 // @description  A userscript that renders `.excalidraw` files directly in the browser.
@@ -17,7 +17,7 @@
 (function () {
   'use strict';
 
-  const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):(document.head||document.documentElement).appendChild(document.createElement("style")).append(t);})(e));};
+  const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
   var _GM_addStyle = (() => typeof GM_addStyle != "undefined" ? GM_addStyle : void 0)();
   var _GM_getResourceText = (() => typeof GM_getResourceText != "undefined" ? GM_getResourceText : void 0)();
